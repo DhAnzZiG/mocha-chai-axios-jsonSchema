@@ -1,0 +1,652 @@
+{
+  "stats": {
+    "suites": 17,
+    "tests": 13,
+    "passes": 12,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-06-01T07:33:53.199Z",
+    "end": "2024-06-01T07:33:55.457Z",
+    "duration": 2258,
+    "testsRegistered": 13,
+    "passPercent": 92.3076923076923,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "5cc5c050-01da-46a0-b6a0-00a7277a2f48",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "25564f69-42ef-4231-b576-f9862ae3f0f2",
+          "title": "UJI GET API",
+          "fullFile": "C:\\Users\\LENOVO\\OneDrive\\KULIAH\\Sertif\\Sertifikat Kuliah\\Pro Sigmaka\\Program\\Mocha-Chai-JSONSChema-Axios\\cobatest\\DELETE_API.test.js",
+          "file": "\\cobatest\\DELETE_API.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "aa9f0435-b5b1-4aca-827e-c7feb0a4ed40",
+              "title": "1. Mengambil Data User (+) Semua data Valid ",
+              "fullFile": "C:\\Users\\LENOVO\\OneDrive\\KULIAH\\Sertif\\Sertifikat Kuliah\\Pro Sigmaka\\Program\\Mocha-Chai-JSONSChema-Axios\\cobatest\\DELETE_API.test.js",
+              "file": "\\cobatest\\DELETE_API.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Data Telah diambil dan Semua Valid",
+                  "fullTitle": "UJI GET API 1. Mengambil Data User (+) Semua data Valid  Data Telah diambil dan Semua Valid",
+                  "timedOut": false,
+                  "duration": 687,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const res = await axios.get('https://dummyjson.com/users/1');\nexpect(res.status).to.equal(200);\nexpect(res.data).to.be.jsonSchema(userSkema);",
+                  "err": {},
+                  "uuid": "08278af0-b816-4e8c-874f-698f31946196",
+                  "parentUUID": "aa9f0435-b5b1-4aca-827e-c7feb0a4ed40",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "08278af0-b816-4e8c-874f-698f31946196"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 687,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "48924d16-92ac-41a6-8c76-fb23eb56dc6f",
+              "title": "2. Mengambil Data User (-) Type data Username tidak Valid",
+              "fullFile": "C:\\Users\\LENOVO\\OneDrive\\KULIAH\\Sertif\\Sertifikat Kuliah\\Pro Sigmaka\\Program\\Mocha-Chai-JSONSChema-Axios\\cobatest\\DELETE_API.test.js",
+              "file": "\\cobatest\\DELETE_API.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Gagal Mengambil Data karena Username Bertipe Data = Number",
+                  "fullTitle": "UJI GET API 2. Mengambil Data User (-) Type data Username tidak Valid Gagal Mengambil Data karena Username Bertipe Data = Number",
+                  "timedOut": false,
+                  "duration": 190,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const userSalah = {\n    username: 200, // Seharusnya bertipe string\n    address: {\n        address: \"Jalan Gang 6\",\n        city: \"Ploso\"\n    }\n};\ntry{\n    const res = await axios.get('https://dummyjson.com/users/1', userSalah);\n    //expect(userSalah).to.be.jsonSchema(userSkema);\n}\ncatch{\n    expect(userSalah.username).to.be.a('number');\n}",
+                  "err": {},
+                  "uuid": "86636d5a-1f33-44ee-b3cb-8c8ef8fa5a38",
+                  "parentUUID": "48924d16-92ac-41a6-8c76-fb23eb56dc6f",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "86636d5a-1f33-44ee-b3cb-8c8ef8fa5a38"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 190,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "060ec3f9-3554-42c8-af80-5e8483ada470",
+              "title": "3. Mengambil Data User (-) Data Required User tidak Valid",
+              "fullFile": "C:\\Users\\LENOVO\\OneDrive\\KULIAH\\Sertif\\Sertifikat Kuliah\\Pro Sigmaka\\Program\\Mocha-Chai-JSONSChema-Axios\\cobatest\\DELETE_API.test.js",
+              "file": "\\cobatest\\DELETE_API.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Gagal Mengambil data karena Required Address yang tidak dicantumkan",
+                  "fullTitle": "UJI GET API 3. Mengambil Data User (-) Data Required User tidak Valid Gagal Mengambil data karena Required Address yang tidak dicantumkan",
+                  "timedOut": false,
+                  "duration": 188,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const requiredSalah = {\n    required: [\"username\", \"address\"],\n    username: \"James\",\n    // address: {\n    //     address: \"Jalan Gang 6\",\n    //     city: \"Ploso\"\n    // }\n};\ntry{\n    const res = await axios.get('https://dummyjson.com/users/1', requiredSalah);\n}\ncatch{\n    expect(requiredSalah).to.not.have.property('address');\n}",
+                  "err": {},
+                  "uuid": "ca1bc51c-4966-4466-aec0-9c02192e5f2c",
+                  "parentUUID": "060ec3f9-3554-42c8-af80-5e8483ada470",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "ca1bc51c-4966-4466-aec0-9c02192e5f2c"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 188,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "8ed72056-68ca-40fb-bff8-8c2d4cd8943f",
+              "title": "4. Mengambil Data User (-) tapi salah link",
+              "fullFile": "C:\\Users\\LENOVO\\OneDrive\\KULIAH\\Sertif\\Sertifikat Kuliah\\Pro Sigmaka\\Program\\Mocha-Chai-JSONSChema-Axios\\cobatest\\DELETE_API.test.js",
+              "file": "\\cobatest\\DELETE_API.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Gagal Mengambil data user karena mengarah pada data product",
+                  "fullTitle": "UJI GET API 4. Mengambil Data User (-) tapi salah link Gagal Mengambil data user karena mengarah pada data product",
+                  "timedOut": false,
+                  "duration": 189,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const linkSalah = {\n    username: \"James\",\n    address: {\n        address: \"Jalan Gang 6\",\n        city: \"Ploso\"\n    }\n}\ntry{\n    const res = await axios.get('https://dummyjson.com/userrss/1', linkSalah);\n}\ncatch (err){\n    expect(err.response.status).to.equal(404);\n}",
+                  "err": {},
+                  "uuid": "55886174-cde8-4835-8427-2a1b8ee616fb",
+                  "parentUUID": "8ed72056-68ca-40fb-bff8-8c2d4cd8943f",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "55886174-cde8-4835-8427-2a1b8ee616fb"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 189,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "8466d113-5e58-4f16-be52-3aaf299acbd2",
+          "title": "UJI DELETE API",
+          "fullFile": "C:\\Users\\LENOVO\\OneDrive\\KULIAH\\Sertif\\Sertifikat Kuliah\\Pro Sigmaka\\Program\\Mocha-Chai-JSONSChema-Axios\\cobatest\\DELETE_API.test.js",
+          "file": "\\cobatest\\DELETE_API.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "a547148f-0396-4ae7-bbb3-af9c7435466b",
+              "title": "1. Delete Data User (+) Semua data Valid",
+              "fullFile": "C:\\Users\\LENOVO\\OneDrive\\KULIAH\\Sertif\\Sertifikat Kuliah\\Pro Sigmaka\\Program\\Mocha-Chai-JSONSChema-Axios\\cobatest\\DELETE_API.test.js",
+              "file": "\\cobatest\\DELETE_API.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Delete Data Username dan Address secara Valid",
+                  "fullTitle": "UJI DELETE API 1. Delete Data User (+) Semua data Valid Delete Data Username dan Address secara Valid",
+                  "timedOut": false,
+                  "duration": 197,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const deleteUser = {\n    username: \"emilys\",\n    address: {\n        address: \"263 Tenth Street\",\n        city: \"San Francisco\"\n    }\n}\ntry {\n    const res = await axios.delete('https://dummyjson.com/users/1', deleteUser);\n    expect(res.data).to.have.property('isDeleted', true);\n} \ncatch (err) {\n    throw new Error(\"Failed to delete user data: \" + err.message);\n}",
+                  "err": {},
+                  "uuid": "3c4c0af8-aa70-40cb-ae8e-d683f68eb6bd",
+                  "parentUUID": "a547148f-0396-4ae7-bbb3-af9c7435466b",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "3c4c0af8-aa70-40cb-ae8e-d683f68eb6bd"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 197,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "484d1e5a-2b89-4a78-9782-8a3726de298e",
+              "title": "2. Mendelete Data User (-) yang tidak ada",
+              "fullFile": "C:\\Users\\LENOVO\\OneDrive\\KULIAH\\Sertif\\Sertifikat Kuliah\\Pro Sigmaka\\Program\\Mocha-Chai-JSONSChema-Axios\\cobatest\\DELETE_API.test.js",
+              "file": "\\cobatest\\DELETE_API.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Gagal Mendelete Data karena User ID tidak Valid",
+                  "fullTitle": "UJI DELETE API 2. Mendelete Data User (-) yang tidak ada Gagal Mendelete Data karena User ID tidak Valid",
+                  "timedOut": false,
+                  "duration": 190,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "try {\n    await axios.delete('https://dummyjson.com/users/lala99');\n} catch (err) {\n    //expect(err.response.status).to.equal(404);\n    expect(err.response.status).to.equal(400);\n}",
+                  "err": {},
+                  "uuid": "c9e09bf3-93ac-49b6-9b18-73a718468158",
+                  "parentUUID": "484d1e5a-2b89-4a78-9782-8a3726de298e",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "c9e09bf3-93ac-49b6-9b18-73a718468158"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 190,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "ca561fe1-faaf-482a-a614-4457bf1a2189",
+          "title": "UJI POST API",
+          "fullFile": "C:\\Users\\LENOVO\\OneDrive\\KULIAH\\Sertif\\Sertifikat Kuliah\\Pro Sigmaka\\Program\\Mocha-Chai-JSONSChema-Axios\\cobatest\\POST_API.test.js",
+          "file": "\\cobatest\\POST_API.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "a2b008d5-3dac-4166-b3c1-d0096a9d313f",
+              "title": "1. Menambah Data User (+) Semua data Valid",
+              "fullFile": "C:\\Users\\LENOVO\\OneDrive\\KULIAH\\Sertif\\Sertifikat Kuliah\\Pro Sigmaka\\Program\\Mocha-Chai-JSONSChema-Axios\\cobatest\\POST_API.test.js",
+              "file": "\\cobatest\\POST_API.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Menambah Data Username dan Address secara Valid",
+                  "fullTitle": "UJI POST API 1. Menambah Data User (+) Semua data Valid Menambah Data Username dan Address secara Valid",
+                  "timedOut": false,
+                  "duration": 191,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const dataValid = {\n    username: \"James\",\n    address: {\n        address: \"Solo\",\n        city: \"SoloKulon\"\n    }\n}\nconst res = await axios.post('https://dummyjson.com/users/add', dataValid);\nexpect(res.status).to.equal(201);\nexpect(res.data).to.be.jsonSchema(userSkema);",
+                  "err": {},
+                  "uuid": "a9162cd3-8b29-484f-b13b-d7a1bb165ea5",
+                  "parentUUID": "a2b008d5-3dac-4166-b3c1-d0096a9d313f",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "a9162cd3-8b29-484f-b13b-d7a1bb165ea5"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 191,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "fe49809c-3360-4ee1-b7d1-0697afcbab70",
+              "title": "2.  Menambah Data User (-) dengan input yang Invalid",
+              "fullFile": "C:\\Users\\LENOVO\\OneDrive\\KULIAH\\Sertif\\Sertifikat Kuliah\\Pro Sigmaka\\Program\\Mocha-Chai-JSONSChema-Axios\\cobatest\\POST_API.test.js",
+              "file": "\\cobatest\\POST_API.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Gagal Menambah Data karena Username berisi angka",
+                  "fullTitle": "UJI POST API 2.  Menambah Data User (-) dengan input yang Invalid Gagal Menambah Data karena Username berisi angka",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const UsernameSalah = {\n    username: 200,\n    address: {\n        address: \"Solo\",\n        city: \"SoloKulon\"\n      }\n}   \ntry{\n    if (typeof UsernameSalah.username !== 'string') {\n        throw new TypeError('Username Harus STRING');\n    }\n    await axios.post('https://dummyjson.com/users/add', UsernameSalah);\n}\ncatch (error) {\n    expect(error.message).to.equal('Username Harus STRING');\n}",
+                  "err": {},
+                  "uuid": "207016bf-e99f-4106-bc47-eb4ab3e8769d",
+                  "parentUUID": "fe49809c-3360-4ee1-b7d1-0697afcbab70",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "207016bf-e99f-4106-bc47-eb4ab3e8769d"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "0e68e0c4-a9ec-4d41-87c1-ada8565e6876",
+              "title": "3. Menambah Data User (-) Data Required User tidak Valid",
+              "fullFile": "C:\\Users\\LENOVO\\OneDrive\\KULIAH\\Sertif\\Sertifikat Kuliah\\Pro Sigmaka\\Program\\Mocha-Chai-JSONSChema-Axios\\cobatest\\POST_API.test.js",
+              "file": "\\cobatest\\POST_API.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Gagal Menambah data karena Required Address yang tidak dicantumkan",
+                  "fullTitle": "UJI POST API 3. Menambah Data User (-) Data Required User tidak Valid Gagal Menambah data karena Required Address yang tidak dicantumkan",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const requiredSalah = {\n    required: [\"username\", \"address\"],\n    username: \"James\",\n    // address: {\n    //     address: \"Jalan Gang 6\",\n    //     city: \"Ploso\"\n    // }\n};\n           \ntry{\n    if (!requiredSalah.address) {\n        throw new Error('Address Harus diisi');\n    }\n    const res = await axios.post('https://dummyjson.com/users/add', requiredSalah);\n}\ncatch (error){\n    expect(error.message).to.equal('Address Harus diisi');\n    expect(requiredSalah).to.not.have.property('address');\n}",
+                  "err": {},
+                  "uuid": "5c84b180-74de-4ba4-99e5-883c6bc19ab5",
+                  "parentUUID": "0e68e0c4-a9ec-4d41-87c1-ada8565e6876",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "5c84b180-74de-4ba4-99e5-883c6bc19ab5"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "03f396d3-4fbc-4ead-a1f2-6c867b3e009a",
+              "title": "4. Menambah Data User (-) namun username dan address Duplikat",
+              "fullFile": "C:\\Users\\LENOVO\\OneDrive\\KULIAH\\Sertif\\Sertifikat Kuliah\\Pro Sigmaka\\Program\\Mocha-Chai-JSONSChema-Axios\\cobatest\\POST_API.test.js",
+              "file": "\\cobatest\\POST_API.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Gagal Menambah data user karena data User sudah ada",
+                  "fullTitle": "UJI POST API 4. Menambah Data User (-) namun username dan address Duplikat Gagal Menambah data user karena data User sudah ada",
+                  "timedOut": false,
+                  "duration": 211,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "const duplikat = {\n    username: \"emilys\",\n    address: {\n        address: \"263 Tenth Street\",\n        city: \"San Francisco\"\n    }\n}\ntry {\n    const adaUser = await axios.get(`https://dummyjson.com/users/${duplikat.username}`);\n    if (adaUser.data.username === duplikat.username) {\n        throw new Error('Username sudah ada');\n    }\n    const res = await axios.post('https://dummyjson.com/users/add', duplikat);\n    expect(res.data).to.be.jsonSchema(userSkema);\n} catch (err) {   \n   expect(() => { throw err }).to.throw('Username sudah ada');\n   expect(res.status).to.equal(400);\n}",
+                  "err": {
+                    "message": "AssertionError: expected [Function] to throw error including 'Username sudah ada' but got 'Request failed with status code 400'",
+                    "estack": "AssertionError: expected [Function] to throw error including 'Username sudah ada' but got 'Request failed with status code 400'\n    at Context.<anonymous> (file:///C:/Users/LENOVO/OneDrive/KULIAH/Sertif/Sertifikat%20Kuliah/Pro%20Sigmaka/Program/Mocha-Chai-JSONSChema-Axios/cobatest/POST_API.test.js:87:52)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)",
+                    "diff": "- Request failed with status code 400\n+ Username sudah ada\n"
+                  },
+                  "uuid": "19881409-6889-44e9-8094-0b6c74c959ca",
+                  "parentUUID": "03f396d3-4fbc-4ead-a1f2-6c867b3e009a",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [],
+              "failures": [
+                "19881409-6889-44e9-8094-0b6c74c959ca"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 211,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "6d00f174-1a0c-4537-b95b-3cb415872908",
+          "title": "UJI PUT API",
+          "fullFile": "C:\\Users\\LENOVO\\OneDrive\\KULIAH\\Sertif\\Sertifikat Kuliah\\Pro Sigmaka\\Program\\Mocha-Chai-JSONSChema-Axios\\cobatest\\PUT_API.test.js",
+          "file": "\\cobatest\\PUT_API.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "a742e3f9-66ad-4119-9f9e-19dff91b5c17",
+              "title": "1. Mengedit Data User (+) Semua data Valid",
+              "fullFile": "C:\\Users\\LENOVO\\OneDrive\\KULIAH\\Sertif\\Sertifikat Kuliah\\Pro Sigmaka\\Program\\Mocha-Chai-JSONSChema-Axios\\cobatest\\PUT_API.test.js",
+              "file": "\\cobatest\\PUT_API.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Mengedit Data Username dan Address secara Valid",
+                  "fullTitle": "UJI PUT API 1. Mengedit Data User (+) Semua data Valid Mengedit Data Username dan Address secara Valid",
+                  "timedOut": false,
+                  "duration": 192,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const ubahValid = {\n    username: \"James\",\n    address: {\n        address: \"Jl. Raya\",\n        city: \"Bali\"\n    }\n}\ntry {\n    const res = await axios.put('https://dummyjson.com/users/1', ubahValid);\n    expect(res.data).to.be.jsonSchema(userSkema);\n} \ncatch (err) {\n    throw new Error(\"Failed to update user data: \" + err.message);\n}",
+                  "err": {},
+                  "uuid": "3e906d42-0c31-4ea9-91a9-a8b638996f83",
+                  "parentUUID": "a742e3f9-66ad-4119-9f9e-19dff91b5c17",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "3e906d42-0c31-4ea9-91a9-a8b638996f83"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 192,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "43ea07d8-5805-4fcf-891d-3411c5ddc3b6",
+              "title": "2. Mengedit Data User (-) dengan input yang Invalid",
+              "fullFile": "C:\\Users\\LENOVO\\OneDrive\\KULIAH\\Sertif\\Sertifikat Kuliah\\Pro Sigmaka\\Program\\Mocha-Chai-JSONSChema-Axios\\cobatest\\PUT_API.test.js",
+              "file": "\\cobatest\\PUT_API.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Gagal Mengedit Data karena Username berisi angka",
+                  "fullTitle": "UJI PUT API 2. Mengedit Data User (-) dengan input yang Invalid Gagal Mengedit Data karena Username berisi angka",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const userAngka = {\n    username: 200,\n    address: {\n        address: \"Jl. Raya\",\n        city: \"Bali\"\n      }\n}   \ntry{\n    if (typeof userAngka.username !== 'string') {\n        throw new TypeError('Username Harus STRING');\n    }\n    await axios.put('https://dummyjson.com/users/1', userAngka);\n}\ncatch (error) {\n    expect(error.message).to.equal('Username Harus STRING');\n}",
+                  "err": {},
+                  "uuid": "6731ee3a-ad5c-48c3-a381-9ccc99463e25",
+                  "parentUUID": "43ea07d8-5805-4fcf-891d-3411c5ddc3b6",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "6731ee3a-ad5c-48c3-a381-9ccc99463e25"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "9c798562-e824-4d39-baa3-d814453cd21e",
+              "title": "3. Mengedit Data User (-) Data Required User tidak Valid",
+              "fullFile": "C:\\Users\\LENOVO\\OneDrive\\KULIAH\\Sertif\\Sertifikat Kuliah\\Pro Sigmaka\\Program\\Mocha-Chai-JSONSChema-Axios\\cobatest\\PUT_API.test.js",
+              "file": "\\cobatest\\PUT_API.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Gagal Mengedit data karena Required Address yang tidak dicantumkan",
+                  "fullTitle": "UJI PUT API 3. Mengedit Data User (-) Data Required User tidak Valid Gagal Mengedit data karena Required Address yang tidak dicantumkan",
+                  "timedOut": false,
+                  "duration": 0,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const requiredSalah = {\n    required: [\"username\", \"address\"],\n    username: \"James\",\n    // address: {\n    //     address: \"Jalan Gang 6\",\n    //     city: \"Ploso\"\n    // }\n};\n           \ntry{\n    if (!requiredSalah.address) {\n        throw new Error('Address Harus diisi');\n    }\n    const res = await axios.put('https://dummyjson.com/users/1', requiredSalah);\n}\ncatch (error){\n    expect(error.message).to.equal('Address Harus diisi');\n    expect(requiredSalah).to.not.have.property('address');\n}",
+                  "err": {},
+                  "uuid": "0e122cec-d2bc-47e1-8547-eb6593a67256",
+                  "parentUUID": "9c798562-e824-4d39-baa3-d814453cd21e",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "0e122cec-d2bc-47e1-8547-eb6593a67256"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 0,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.4.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir ": " Report-Hasil-Test",
+        "reportFilename ": " [datetime]_Hasil-Test",
+        "timestamp ": " yyyy-mm-dd hh-MM-ss"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
