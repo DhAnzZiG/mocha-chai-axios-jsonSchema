@@ -1,0 +1,279 @@
+{
+  "stats": {
+    "suites": 6,
+    "tests": 5,
+    "passes": 5,
+    "pending": 0,
+    "failures": 0,
+    "start": "2024-06-03T14:59:57.495Z",
+    "end": "2024-06-03T14:59:59.127Z",
+    "duration": 1632,
+    "testsRegistered": 5,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "0784a0fd-3a8f-499f-8393-f81e46d92f23",
+      "title": "",
+      "fullFile": "C:\\Users\\LENOVO\\OneDrive\\KULIAH\\Sertif\\Sertifikat Kuliah\\Pro Sigmaka\\Program\\01 June 2024\\Revisi Mocha Chai Axios JSONScheme\\Revtest\\API.test.js",
+      "file": "\\Revtest\\API.test.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "562fe03b-72b8-4040-a3ad-21d45216b7f1",
+          "title": "UJI API",
+          "fullFile": "C:\\Users\\LENOVO\\OneDrive\\KULIAH\\Sertif\\Sertifikat Kuliah\\Pro Sigmaka\\Program\\01 June 2024\\Revisi Mocha Chai Axios JSONScheme\\Revtest\\API.test.js",
+          "file": "\\Revtest\\API.test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [],
+          "suites": [
+            {
+              "uuid": "5c8198d9-ac33-44f0-b8c6-d42b19d3bf35",
+              "title": "1. Mengambil Data User [GET API] (+) Semua data Valid ",
+              "fullFile": "C:\\Users\\LENOVO\\OneDrive\\KULIAH\\Sertif\\Sertifikat Kuliah\\Pro Sigmaka\\Program\\01 June 2024\\Revisi Mocha Chai Axios JSONScheme\\Revtest\\API.test.js",
+              "file": "\\Revtest\\API.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Data Telah diambil dan Semua Valid",
+                  "fullTitle": "UJI API 1. Mengambil Data User [GET API] (+) Semua data Valid  Data Telah diambil dan Semua Valid",
+                  "timedOut": false,
+                  "duration": 648,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const id = 4;\nconst res = await axios.get(`https://dummyjson.com/users/${id}`);\nexpect(res.status).to.equal(200);\nexpect(res.data).to.be.jsonSchema(userSkema);",
+                  "err": {},
+                  "uuid": "56303fc8-9fd8-4237-b9b6-4e7e234fdc42",
+                  "parentUUID": "5c8198d9-ac33-44f0-b8c6-d42b19d3bf35",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "56303fc8-9fd8-4237-b9b6-4e7e234fdc42"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 648,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "4e915e14-18c1-470c-b2da-e80ded834d6b",
+              "title": "2. Menambah 1 Data User [POST API] (+) Semua data Valid ",
+              "fullFile": "C:\\Users\\LENOVO\\OneDrive\\KULIAH\\Sertif\\Sertifikat Kuliah\\Pro Sigmaka\\Program\\01 June 2024\\Revisi Mocha Chai Axios JSONScheme\\Revtest\\API.test.js",
+              "file": "\\Revtest\\API.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Berhasil menambah data dengan semua data Valid",
+                  "fullTitle": "UJI API 2. Menambah 1 Data User [POST API] (+) Semua data Valid  Berhasil menambah data dengan semua data Valid",
+                  "timedOut": false,
+                  "duration": 194,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const postValid = {\n    id : '100',\n    firstName : 'James',\n    address : {\n        address: \"Jalan Gang 6\",\n        city: \"Guangzhou\"\n    }\n}\nconst res = await axios.post('https://dummyjson.com/users/add', postValid);\nexpect(res.status).to.equal(201);\nexpect(res.data).to.be.jsonSchema(userSkema);\nconst isiAlamat = res.data.address.city;\nexpect (isiAlamat).to.equal('Guangzhou');",
+                  "err": {},
+                  "uuid": "fc9a4147-cf2a-4816-bc39-b766dc978ea1",
+                  "parentUUID": "4e915e14-18c1-470c-b2da-e80ded834d6b",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "fc9a4147-cf2a-4816-bc39-b766dc978ea1"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 194,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "b9f9a3a8-1c06-4d7a-8588-8b9ccc5e278d",
+              "title": "3. Update 1 Data User [PUT API] (+) Semua data Valid ",
+              "fullFile": "C:\\Users\\LENOVO\\OneDrive\\KULIAH\\Sertif\\Sertifikat Kuliah\\Pro Sigmaka\\Program\\01 June 2024\\Revisi Mocha Chai Axios JSONScheme\\Revtest\\API.test.js",
+              "file": "\\Revtest\\API.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Berhasil Update data dengan semua data Valid",
+                  "fullTitle": "UJI API 3. Update 1 Data User [PUT API] (+) Semua data Valid  Berhasil Update data dengan semua data Valid",
+                  "timedOut": false,
+                  "duration": 196,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const updateValid = {\n    firstName : 'Samuel',\n    address : {\n        address: \"JalanJalan\",\n        city: \"Madya\"\n    }\n}\nconst idUpdate = 4;\nconst res = await axios.put(`https://dummyjson.com/users/${idUpdate}`, updateValid);\nexpect(res.status).to.equal(200);\nexpect(res.data).to.be.jsonSchema(userSkema);",
+                  "err": {},
+                  "uuid": "10d45b73-6f6a-4d25-9c98-ec24f0863d35",
+                  "parentUUID": "b9f9a3a8-1c06-4d7a-8588-8b9ccc5e278d",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "10d45b73-6f6a-4d25-9c98-ec24f0863d35"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 196,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "aafadff1-ed92-4b43-b7c1-8ef0d654ffd9",
+              "title": "4. Delete 1 Data User [DELETE API] (+) Semua data Valid ",
+              "fullFile": "C:\\Users\\LENOVO\\OneDrive\\KULIAH\\Sertif\\Sertifikat Kuliah\\Pro Sigmaka\\Program\\01 June 2024\\Revisi Mocha Chai Axios JSONScheme\\Revtest\\API.test.js",
+              "file": "\\Revtest\\API.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Berhasil Hapus data dengan semua data Valid",
+                  "fullTitle": "UJI API 4. Delete 1 Data User [DELETE API] (+) Semua data Valid  Berhasil Hapus data dengan semua data Valid",
+                  "timedOut": false,
+                  "duration": 203,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const idDelete = 3;\nconst res = await axios.delete(`https://dummyjson.com/users/${idDelete}`);\nexpect(res.data).to.be.jsonSchema(userDel);\nexpect(res.data).to.have.property('isDeleted', true);",
+                  "err": {},
+                  "uuid": "b2940905-b4f3-413d-8a06-7668c655f817",
+                  "parentUUID": "aafadff1-ed92-4b43-b7c1-8ef0d654ffd9",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "b2940905-b4f3-413d-8a06-7668c655f817"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 203,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            },
+            {
+              "uuid": "78ad78c3-2412-44c6-8346-cfe71c2c31c5",
+              "title": "5. Authentikasi 1 Data User [GET TOKEN API] (+) Semua data Valid ",
+              "fullFile": "C:\\Users\\LENOVO\\OneDrive\\KULIAH\\Sertif\\Sertifikat Kuliah\\Pro Sigmaka\\Program\\01 June 2024\\Revisi Mocha Chai Axios JSONScheme\\Revtest\\API.test.js",
+              "file": "\\Revtest\\API.test.js",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Berhasil Mendapatkan TOKEN data dengan semua data Valid",
+                  "fullTitle": "UJI API 5. Authentikasi 1 Data User [GET TOKEN API] (+) Semua data Valid  Berhasil Mendapatkan TOKEN data dengan semua data Valid",
+                  "timedOut": false,
+                  "duration": 381,
+                  "state": "passed",
+                  "speed": "slow",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "const mauLogin = {\n    username: 'emilys',\n    password: 'emilyspass'\n}\nconst res = await axios.post(`https://dummyjson.com/auth/login`, mauLogin);\nconst Token = res.data.token;\nconst dahLogin = await axios.get(`https://dummyjson.com/auth/me`,{\n    headers: {\n    'Authorization': `Bearer ${Token}`\n    }\n})\nexpect(res.data).to.be.jsonSchema(userAuth);",
+                  "err": {},
+                  "uuid": "02a6bcc4-253a-4a17-a4b2-65d13e8e25be",
+                  "parentUUID": "78ad78c3-2412-44c6-8346-cfe71c2c31c5",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "02a6bcc4-253a-4a17-a4b2-65d13e8e25be"
+              ],
+              "failures": [],
+              "pending": [],
+              "skipped": [],
+              "duration": 381,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
+          "passes": [],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 0,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.4.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "[datetime]_report_test",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "report_test",
+        "reportFilename": "[datetime]_report_test",
+        "timestamp": "yyyy-mm-dd-hh-MM-ss"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
